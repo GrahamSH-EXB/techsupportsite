@@ -48,7 +48,7 @@
             "
             id="grid-first-name"
             type="text"
-            placeholder="GrahamSH"
+            placeholder="John Doe"
             v-model="name"
           />
         </div>
@@ -130,7 +130,7 @@
             v-model="content"
           ></textarea>
           <p class="text-gray-600 text-xs italic">
-            What do you want to tell me? Write above.
+            Include any details I need to know, including the problem and your address.
           </p>
         </div>
       </div>
