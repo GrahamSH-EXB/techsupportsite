@@ -70,6 +70,7 @@
           <vue-tel-input
             v-model="phoneNum"
             :onlyCountries="onlyCountries"
+            :inputOptions="inputOptions"
           ></vue-tel-input>
         </div>
       </div>
@@ -154,6 +155,7 @@ export default {
       name: "",
       phoneNum: "",
       onlyCountries: ["us"],
+      inputOptions: {autocomplete: "tel"}
     };
   },
   methods: {
