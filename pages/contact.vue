@@ -50,6 +50,7 @@
             type="text"
             placeholder="John Doe"
             v-model="name"
+            autocomplete="name"
           />
         </div>
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -62,7 +63,7 @@
               font-bold
               mb-2
             "
-            for="grid-first-name"
+            for="tel"
           >
             Phone number
           </label>
@@ -82,12 +83,13 @@
               focus:outline-none
               focus:bg-white
             "
-            id="grid-first-name"
+            id="grid-tel"
             type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            placeholder="123-456-7890"
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+            placeholder="1234567890"
             v-model="phoneNum"
             required
+            autocomplete="tel"
           />
         </div>
 
