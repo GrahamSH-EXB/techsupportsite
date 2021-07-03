@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-indigo-700 p-2 mt-0 fixed w-full z-10 top-0 drop-shadow-md filter"
+    class="bg-yellow-700 p-2 mt-0 fixed w-full z-10 top-0 drop-shadow-md filter"
   >
     <div class="container mx-auto flex flex-wrap items-center">
       <div
@@ -20,15 +20,12 @@
             no-underline
             hover:text-white
             hover:no-underline
-            font-bold
+            font-semibold
           "
           to="/"
         >
           <span class="text-2xl"
-            ><img
-              class="h-10 pr-2 inline-block"
-              src="/logo.svg"
-            />GrahamSH</span
+            >Graham's Tech</span
           >
         </NuxtLink>
       </div>
@@ -53,11 +50,8 @@
           "
         >
           <NavLink to="/">Home</NavLink>
-          <NavLink class="blog-link" to="/blog">Blog</NavLink>
-          <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </ul>
-        <Search />
       </div>
     </div>
   </nav>

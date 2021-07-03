@@ -1,5 +1,6 @@
 <template>
   <main>
+  <div class="hidden">
     <div class="hero py-16">
       <!-- container -->
       <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
@@ -16,9 +17,9 @@
                 leading-tight
               "
             >
-              Hi, I'm @GrahamSH
+              Tech classes and support
             </h1>
-            <hr class="w-12 h-1 bg-indigo-600 rounded-full mt-8" />
+            <hr class="w-12 h-1 bg-yellow-600 rounded-full mt-8" />
             <p
               class="text-gray-800 text-2xl leading-relaxed mt-8 font-semibold"
             >
@@ -27,19 +28,19 @@
           </div>
 
           <!-- hero image -->
-          <div class="col-span-6">
+          <div class="col-span-6 hidden">
             <img src="/logo.svg" height="300px" width="300px" />
           </div>
         </div>
       </div>
     </div>
     <!-- end hero -->
-    <div class="py-12 bg-white">
+    <div class="py-12 bg-white hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="lg:text-center">
           <h2
             class="
-              text-base text-indigo-600
+              text-base text-yellow-600
               font-semibold
               tracking-wide
               uppercase
@@ -85,7 +86,7 @@
                       h-12
                       w-12
                       rounded-md
-                      bg-indigo-700
+                      bg-yellow-700
                       text-white
                     "
                   >
@@ -135,7 +136,7 @@
                       h-12
                       w-12
                       rounded-md
-                      bg-indigo-700
+                      bg-yellow-700
                       text-white
                     "
                   >
@@ -186,7 +187,7 @@
                     h-12
                     w-12
                     rounded-md
-                    bg-indigo-700
+                    bg-yellow-700
                     text-white
                   "
                 >
@@ -229,7 +230,7 @@
                       h-12
                       w-12
                       rounded-md
-                      bg-indigo-700
+                      bg-yellow-700
                       text-white
                     "
                   >
@@ -305,6 +306,10 @@
         </div>
       </div>
     </section>
+  </div>
+  <div>
+    <h1 class="font-bold text-4xl">Coming soon</h1>
+  </div>
   </main>
 </template>
 

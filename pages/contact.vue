@@ -14,7 +14,7 @@
       Contact
     </h1>
 
-    <form class="w-full max-w-lg">
+    <form class="w-full max-w-lg" @submit.prevent="send()">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
@@ -28,7 +28,7 @@
             "
             for="grid-first-name"
           >
-            Username
+            Name
           </label>
           <input
             class="
@@ -49,8 +49,48 @@
             id="grid-first-name"
             type="text"
             placeholder="GrahamSH"
+            v-model="name"
           />
         </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="
+              block
+              uppercase
+              tracking-wide
+              text-gray-700 text-xs
+              font-bold
+              mb-2
+            "
+            for="grid-first-name"
+          >
+            Phone number
+          </label>
+          <input
+            class="
+              appearance-none
+              block
+              w-full
+              bg-gray-200
+              text-gray-700
+              border
+              rounded
+              py-3
+              px-4
+              mb-3
+              leading-tight
+              focus:outline-none
+              focus:bg-white
+            "
+            id="grid-first-name"
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="123-456-7890"
+            v-model="phoneNum"
+            required
+          />
+        </div>
+
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
@@ -87,7 +127,7 @@
               h-48
               resize-none
             "
-            id="message"
+            v-model="content"
           ></textarea>
           <p class="text-gray-600 text-xs italic">
             What do you want to tell me? Write above.
@@ -99,8 +139,8 @@
           <button
             class="
               shadow
-              bg-indigo-700
-              hover:bg-indigo-400
+              bg-yellow-700
+              hover:bg-yellow-400
               focus:shadow-outline
               focus:outline-none
               text-white
@@ -109,8 +149,9 @@
               px-4
               rounded
             "
-            type="button"
-            @click="send()"
+            type="submit"
+            
+            
           >
             Send
           </button>
@@ -124,8 +165,15 @@
 export default {
   head() {
     return {
-      title: `About - GrahamSH`,
+      title: `Contact - GrahamSH`,
     };
+  },
+  data() {
+    return {
+      content: '',
+      name: '',
+      phoneNum: ''
+    }
   },
   methods: {
     async send() {
@@ -135,11 +183,12 @@ export default {
         version,
         userAgent: navigator.userAgent,
         language: navigator.language,
-        content: document.querySelector("#message").value,
-        username: document.querySelector("#grid-first-name").value,
+        content: this.content,
+        name: this.name,
+        phoneNum: this.phoneNum
       };
 
-      const res = await fetch("https://grahamsh-contact.glitch.me/send", {
+      const res = await fetch("https://tech-contact.glitch.me/send", {
         method: "POST",
         body: JSON.stringify(body),
       });

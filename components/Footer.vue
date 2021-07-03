@@ -1,10 +1,10 @@
 <template>
-  <footer class="bg-indigo-700 pt-10 sm:mt-10 pt-10">
-    <div class="max-w-6xl m-auto text-indigo-800 flex flex-wrap justify-left">
+  <footer class="bg-yellow-700 pt-10 sm:mt-10 pt-10">
+    <div class="max-w-6xl m-auto text-yellow-800 flex flex-wrap justify-left">
       <!-- Col-1 -->
       <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
         <!-- Col Title -->
-        <div class="text-xs uppercase text-indigo-400 font-medium mb-6">
+        <div class="text-xs uppercase text-yellow-400 font-medium mb-6">
           Pages
         </div>
 
@@ -14,8 +14,8 @@
           class="
             my-3
             block
-            text-indigo-300
-            hover:text-indigo-100
+            text-yellow-300
+            hover:text-yellow-100
             text-sm
             font-medium
             duration-700
@@ -28,8 +28,8 @@
           class="
             my-3
             block
-            text-indigo-300
-            hover:text-indigo-100
+            text-yellow-300
+            hover:text-yellow-100
             text-sm
             font-medium
             duration-700
@@ -42,8 +42,8 @@
           class="
             my-3
             block
-            text-indigo-300
-            hover:text-indigo-100
+            text-yellow-300
+            hover:text-yellow-100
             text-sm
             font-medium
             duration-700
@@ -56,8 +56,8 @@
           class="
             my-3
             block
-            text-indigo-300
-            hover:text-indigo-100
+            text-yellow-300
+            hover:text-yellow-100
             text-sm
             font-medium
             duration-700
@@ -70,7 +70,7 @@
       <!-- Col-3 -->
       <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
         <!-- Col Title -->
-        <div class="text-xs uppercase text-indigo-400 font-medium mb-6">
+        <div class="text-xs uppercase text-yellow-400 font-medium mb-6">
           Me on the web
         </div>
 
@@ -80,8 +80,8 @@
           class="
             my-3
             block
-            text-indigo-300
-            hover:text-indigo-100
+            text-yellow-300
+            hover:text-yellow-100
             text-sm
             font-medium
             duration-700
@@ -101,8 +101,8 @@
           px-3
           m-auto
           pt-5
-          border-t border-indigo-500
-          text-indigo-400 text-sm
+          border-t border-yellow-500
+          text-yellow-400 text-sm
           flex-col
           md:flex-row
           max-w-6xl
@@ -115,8 +115,8 @@
               class="
                 fill-current
                 cursor-pointer
-                text-indigo-500
-                hover:text-indigo-400
+                text-yellow-500
+                hover:text-yellow-400
               "
               xmlns="http://www.w3.org/2000/svg"
               role="img"

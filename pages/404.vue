@@ -14,7 +14,7 @@
       404
     </h1>
 
-    <div class="prose prose-indigo">
+    <div class="prose prose-yellow">
       <h2>Sorry, we couldn't find that page!</h2>
       <h4><nuxt-link to="/">Go home</nuxt-link></h4>
     </div>
