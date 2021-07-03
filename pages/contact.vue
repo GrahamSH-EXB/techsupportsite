@@ -53,7 +53,7 @@
             autocomplete="name"
           />
         </div>
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
             class="
               block
@@ -67,32 +67,11 @@
           >
             Phone number
           </label>
-          <input
-            class="
-              appearance-none
-              block
-              w-full
-              bg-gray-200
-              text-gray-700
-              border
-              rounded
-              py-3
-              px-4
-              mb-3
-              leading-tight
-              focus:outline-none
-              focus:bg-white
-            "
-            id="grid-tel"
-            type="tel"
-            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-            placeholder="1234567890"
+          <vue-tel-input
             v-model="phoneNum"
-            required
-            autocomplete="tel"
-          />
+            :onlyCountries="onlyCountries"
+          ></vue-tel-input>
         </div>
-
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
@@ -132,7 +111,8 @@
             v-model="content"
           ></textarea>
           <p class="text-gray-600 text-xs italic">
-            Include any details I need to know, including the problem and your address.
+            Include any details I need to know, including the problem and your
+            address.
           </p>
         </div>
       </div>
@@ -152,8 +132,6 @@
               rounded
             "
             type="submit"
-            
-            
           >
             Send
           </button>
@@ -172,22 +150,21 @@ export default {
   },
   data() {
     return {
-      content: '',
-      name: '',
-      phoneNum: ''
-    }
+      content: "",
+      name: "",
+      phoneNum: "",
+      onlyCountries: ["us"],
+    };
   },
   methods: {
     async send() {
-      const version = "";
       console.log("Sending");
       const body = {
-        version,
         userAgent: navigator.userAgent,
         language: navigator.language,
         content: this.content,
         name: this.name,
-        phoneNum: this.phoneNum
+        phoneNum: this.phoneNum,
       };
 
       const res = await fetch("https://tech-contact.glitch.me/send", {
@@ -199,3 +176,28 @@ export default {
   },
 };
 </script>
+<style>
+.vti__dropdown {
+      display: none;
+}
+.vti__input {
+    @apply 
+            appearance-none
+            block
+            w-full
+            bg-gray-200
+            text-gray-700
+            border
+            rounded
+            py-3
+            px-4
+            mb-3
+            leading-tight
+            focus:outline-none
+            focus:bg-white;
+          
+}
+.vue-tel-input {
+  border: none !important;;
+}
+</style>
