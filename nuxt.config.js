@@ -13,10 +13,6 @@ export default {
   telemetry: false,
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-  generate: {
-    async routes() {
-    },
-  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
