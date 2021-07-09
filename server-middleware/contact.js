@@ -15,9 +15,6 @@ const client = require("twilio")(accountSid, authToken);
 
 Hook.login("860865759315361802", token);
 
-app.get("/", (request, response) => {
-  response.redirect("https://grahamsh-llk.github.io");
-});
 
 app.post("/send", async (request, response) => {
   if (

@@ -190,7 +190,7 @@ export default {
         phoneNum: this.phoneNum,
       };
       try {
-        const res = await fetch("https://tech-contact.glitch.me/send", {
+        const res = await fetch("/send", {
           method: "POST",
           body: JSON.stringify(body),
         });
