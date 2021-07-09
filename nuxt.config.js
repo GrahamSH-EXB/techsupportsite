@@ -77,7 +77,7 @@ export default {
     domain: "grahamsh.com",
     apiHost: "https://analytics.jeffalo.net",
   },
-
+  serverMiddleware: ["~/server-middleware/contact.js"],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     //parallel: true,

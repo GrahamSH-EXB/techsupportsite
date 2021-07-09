@@ -91,3 +91,4 @@ sw.*
 static/OneSignal*
 
 .nuxt-storybook
+env.json
