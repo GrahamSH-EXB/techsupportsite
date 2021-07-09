@@ -14,6 +14,16 @@
       Contact
     </h1>
 
+    <alert class="my-2" type="info" title="Sent!" v-show="sentSuccessfully"
+      >Your message has been sent successfully.</alert
+    >
+    <alert
+      class="my-2"
+      type="error"
+      title="Sorry, we couldn't send that"
+      v-show="sentErrored"
+      >Try again later</alert
+    >
     <form class="w-full max-w-lg" @submit.prevent="send()">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -131,8 +141,12 @@
               py-2
               px-4
               rounded
+              disabled:opacity-50
+              disabled:cursor-default
+              disabled:hover:bg-yellow-700
             "
             type="submit"
+            :disabled="sentSuccessfully || sending"
           >
             Send
           </button>
@@ -143,7 +157,10 @@
   </main>
 </template>
 <script>
+import { uniFileLandscapeAlt } from 'vue-unicons/dist/icons';
+import Alert from "~/components/Alert.vue";
 export default {
+  components: { Alert },
   head() {
     return {
       title: `Contact - GrahamSH`,
@@ -155,12 +172,16 @@ export default {
       name: "",
       phoneNum: "",
       onlyCountries: ["us"],
-      inputOptions: {autocomplete: "tel"}
+      inputOptions: { autocomplete: "tel" },
+      sentSuccessfully: false,
+      sentErrored: false,
+      sending: false
     };
   },
   methods: {
     async send() {
-      console.log("Sending");
+      if (this.sentSuccessfully) return
+      this.sending = true
       const body = {
         userAgent: navigator.userAgent,
         language: navigator.language,
@@ -168,23 +189,35 @@ export default {
         name: this.name,
         phoneNum: this.phoneNum,
       };
-
-      const res = await fetch("https://tech-contact.glitch.me/send", {
-        method: "POST",
-        body: JSON.stringify(body),
-      });
-      res;
+      try {
+        const res = await fetch("https://tech-contact.glitch.me/send", {
+          method: "POST",
+          body: JSON.stringify(body),
+        });
+        if ((await res.text()) === "sent!") {
+          this.sentSuccessfully = true;
+          this.sentErrored = false;
+          this.sending = false;
+        } else {
+          this.sentErrored = true;
+          this.sentSuccessfully = false;
+          this.sending = false;
+        }
+      } catch (err) {
+        this.sentErrored = true;
+        this.sentSuccessfully = false;
+        this.sending = false;
+      }
     },
   },
 };
 </script>
 <style>
 .vti__dropdown {
-      display: none;
+  display: none;
 }
 .vti__input {
-    @apply 
-            appearance-none
+  @apply appearance-none
             block
             w-full
             bg-gray-200
@@ -197,9 +230,8 @@ export default {
             leading-tight
             focus:outline-none
             focus:bg-white;
-          
 }
 .vue-tel-input {
-  border: none !important;;
+  border: none !important;
 }
 </style>
