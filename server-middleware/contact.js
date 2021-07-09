@@ -94,3 +94,4 @@ app.post("/send", async (request, response) => {
     response.send("sent!");
   } else response.status(403).send("nope!");
 });
+module.exports = app;
