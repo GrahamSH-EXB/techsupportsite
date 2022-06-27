@@ -5,7 +5,7 @@ app.use(bodyParser.text());
 app.listen(process.env.PORT);
 const hookcord = require("hookcord");
 const Hook = new hookcord.Hook();
-const env = require('../env.json')
+try{const env = require('../env.json')}catch{}
 const accountSid = process.env.TWILIO_ACCOUNT_SID || env.accountSid;
 const authToken = process.env.TWILIO_AUTH_TOKEN || env.authToken;
 const token = process.env.SECRET || env.secret;
