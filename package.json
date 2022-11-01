@@ -33,7 +33,7 @@
     "prettier": "^2.3.2",
     "reading-time": "^1.3.0",
     "tailwindcss": "^2",
-    "twilio": "^3.65.0",
+    "twilio": "^3.83.1",
     "vue-plausible": "^1.1.4",
     "vue-server-renderer": "^2.6.12",
     "vue-tel-input": "^5.5.0",
