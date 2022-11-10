@@ -35,7 +35,7 @@
     "tailwindcss": "^2",
     "twilio": "^3.65.0",
     "vue-plausible": "^1.1.4",
-    "vue-server-renderer": "^2.6.12",
+    "vue-server-renderer": "^2.7.14",
     "vue-tel-input": "^5.5.0",
     "vue-unicons": "^3.2.1"
   },
